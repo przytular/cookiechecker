@@ -11,6 +11,7 @@ from config import CONFIG
 
 
 def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
     try:
         uri = env.get('REQUEST_URI', '').split('/')
         _id = uri[2]
