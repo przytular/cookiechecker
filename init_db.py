@@ -4,7 +4,7 @@ from config import CONFIG
 
 metadata = schema.MetaData()
 
-page_table = schema.Table('credentials', metadata,
+table = schema.Table('credentials', metadata,
     schema.Column('id', types.Integer, primary_key=True),
     schema.Column('login', types.Unicode(255), default=u''),
     schema.Column('password', types.Unicode(255), default=u''),
