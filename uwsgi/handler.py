@@ -32,5 +32,7 @@ def application(env, start_response):
                 exp = table.update().where(table.c.id ==_id).values(cookie_content=cookie, last_updated=datetime.now())
                 connection.execute(exp)
                 return [cookie.encode('utf-8')]
+            else:
+                return [b'Couldn\'t log in. Probably wrong credentials?']
     except Exception as e:
         return [str(e).encode('utf-8')]
